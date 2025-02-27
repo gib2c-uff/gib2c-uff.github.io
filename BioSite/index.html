@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="script.js"></script>
+    <title>BioSite</title>
+</head>
+
+
+
+<body>
+
+    <header>
+        <img class="logo" src="GIB2C.png">
+    </header>
+
+
+    <div class="main-content">
+
+
+        <div class="sidebar">
+            <button class="sidebar-button" onclick="DNAMode()">CONVERSÃO</button>
+            <button class="sidebar-button" onclick="TABLEMode()">TABELAS</button>
+        </div>
+
+
+        <div class="display">
+
+
+            <DEFAULT id="DEFAULT">
+                <p class="default-text">SELECIONE UM MODO</p>
+            </DEFAULT>
+
+
+
+            <DNARNA id="DNARNA" hidden="true">
+                <div class="converter">
+                    <div class="conversion-buttons">
+                        <button class="converter-button" onclick="convertToRNA()">DNA &rightarrow; RNA</button>
+                        <button class="converter-button" onclick="convertToDNA()">RNA &rightarrow; DNA</button>
+                        <button class="converter-button" onclick="convertToPROT()">RNA &rightarrow; PROTEÍNAS</button>
+                    </div>
+                    <div class="conversion-results">
+                        <input class="text-input" id="converter-input">
+                        <p id="converter-output">Nada ainda!</p>
+                        <div id="drawing"></div>
+                    </div>
+                </div>
+            </DNARNA>
+
+
+
+            <TABLES id="TABLE" hidden="true">
+
+
+                <div class="table-set">
+                    <img class="table" src="tabelaCodons.png">
+                    
+                </div>
+
+            </TABLES>
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+    </footer>
+
+</body>
+
+
+
+</html>
