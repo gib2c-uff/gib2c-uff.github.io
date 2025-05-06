@@ -50,11 +50,11 @@ function drawAcid(inp, isRNA)
 
         switch(inp[i])
         {
-            case 'A': item = ["#FF4040", "A"]; break;
-            case 'T': item = ["#6AFF5C", "T"]; break;
-            case 'U': item = ["#7CF4FF", "U"]; break;
-            case 'C': item = ["#C26EFF", "C"]; break;
-            case 'G': item = ["#FFF260", "G"]; break;
+            case 'A': item = ["#e8524b", "A"]; break;
+            case 'T': item = ["#ffcf4f", "T"]; break;
+            case 'U': item = ["#f680e7", "U"]; break;
+            case 'C': item = ["#6397f5", "C"]; break;
+            case 'G': item = ["#58b374", "G"]; break;
         }
 
         if (isRNA == 1)
@@ -62,13 +62,13 @@ function drawAcid(inp, isRNA)
             if (direction == "right")
             {
                 line = document.createElement("center")
-                line.innerHTML = "<div class=\"ball-line\" style=\"width: " + width + "px\"> <div class=\"ball\" style=\"background-color: pink; border-color: pink;\"> </div> <div class=\"connector\"></div> <div class=\"ball\" style=\"background-color: " + item[0] + ";\">" + item[1] + "</div> </div>"
+                line.innerHTML = "<div class=\"ball-line\" style=\"width: " + width + "px\"> <div class=\"ball\" style=\"background-color: #a592de; border-color: #a592de;\"> </div> <div class=\"connector\"></div> <div class=\"ball\" style=\"background-color: " + item[0] + ";\">" + item[1] + "</div> </div>"
                 box.appendChild(line)
             }
             else
             {
                 line = document.createElement("center")
-                line.innerHTML = "<div class=\"ball-line\" style=\"width: " + width + "px;\"> <div class=\"ball\" style=\"background-color: " + item[0] + ";\">" + item[1] + "</div> <div class=\"connector\"></div> <div class=\"ball\" style=\"background-color: pink; border-color: pink\"> </div> </div>"
+                line.innerHTML = "<div class=\"ball-line\" style=\"width: " + width + "px;\"> <div class=\"ball\" style=\"background-color: " + item[0] + ";\">" + item[1] + "</div> <div class=\"connector\"></div> <div class=\"ball\" style=\"background-color: #a592de; border-color: #a592de\"> </div> </div>"
                 box.appendChild(line)
             }
         }

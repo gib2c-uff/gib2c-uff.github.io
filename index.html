@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="Assets/favicon.ico">
     <script src="script.js"></script>
     <title>BioSite</title>
 </head>
@@ -16,7 +16,11 @@
 <body>
 
     <header>
-        <img class="logo" src="GIB2C.png">
+        <div class="header-title">
+            <img class="logo" src="Assets/GIB2C.png">
+            <p>GIB²C</p>
+        </div>
+        <p>Conversão de DNA / RNA</p>
     </header>
 
 
@@ -41,9 +45,9 @@
             <DNARNA id="DNARNA" hidden="true">
                 <div class="converter">
                     <div class="conversion-buttons">
-                        <button class="converter-button" onclick="convertToRNA()">DNA &rightarrow; RNA</button>
-                        <button class="converter-button" onclick="convertToDNA()">RNA &rightarrow; DNA</button>
-                        <button class="converter-button" onclick="convertToPROT()">RNA &rightarrow; PROTEÍNAS</button>
+                        <button class="converter-button" onclick="convertToRNA()">Transcrição</button>
+                        <button class="converter-button" onclick="convertToDNA()">Transcrição Reversa</button>
+                        <button class="converter-button" onclick="convertToPROT()">Tradução</button>
                     </div>
                     <div class="conversion-results">
                         <input class="text-input" id="converter-input">
@@ -56,12 +60,89 @@
 
 
             <TABLES id="TABLE" hidden="true">
+                <BASES id="BASES">
+                    <div class="table-sections">
+                        <div class="conversion-buttons">
+                            <button class="converter-button" onclick="">Bases Nitrogenadas</button>
+                            <button class="converter-button" onclick="">Aminoácidos</button>
+                        </div>
 
+                        <div class="base-complements">
+                            <div class="table-text-box">Bases nitrogenadas e sua base complementar</div>
+                            <div class="base-complements-items">
+                                <div class="base-complements-item">
+                                    <div class="ball-complement" style="background-color: #e8524b;">Adenina</div>
+                                    <div class="connector" style="width: 30px;"></div>
+                                    <div class="ball" style="background-color: #ffffff;">T</div>
+                                </div>
+                                <div class="base-complements-item">
+                                    <div class="ball-complement" style="background-color: #ffcf4f;">Timina</div>
+                                    <div class="connector" style="width: 30px;"></div>
+                                    <div class="ball" style="background-color: #ffffff;">A</div>
+                                </div>
+                                <div class="base-complements-item">
+                                    <div class="ball-complement" style="background-color: #58b374;">Guanina</div>
+                                    <div class="connector" style="width: 30px;"></div>
+                                    <div class="ball" style="background-color: #ffffff;">C</div>
+                                </div>
+                                <div class="base-complements-item">
+                                    <div class="ball-complement" style="background-color: #6397f5;">Citosina</div>
+                                    <div class="connector" style="width: 30px;"></div>
+                                    <div class="ball" style="background-color: #ffffff;">G</div>
+                                </div>
+                                <div class="base-complements-item">
+                                    <div class="ball-complement" style="background-color: #f680e7;">Uracila</div>
+                                    <div class="connector" style="width: 30px;"></div>
+                                    <div class="ball" style="background-color: #ffffff;">A</div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="table-set">
-                    <img class="table" src="tabelaCodons.png">
-                    
-                </div>
+                        <div class="base-types">
+
+                            <div class="base-type-box">
+                                <div class="table-text-box">Composição dos ácidos nucleicos</div>
+                                <div class="base-type-items">
+                                    <div class="base-type-item">
+                                        <p class="base-type-subtitle">DNA:</p>
+                                        <div class="ball" style="background-color: #e8524b; margin-left: 15px;">A</div>
+                                        <div class="ball" style="background-color: #ffcf4f; margin-left: 15px;">T</div>
+                                        <div class="ball" style="background-color: #58b374; margin-left: 15px;">G</div>
+                                        <div class="ball" style="background-color: #6397f5; margin-left: 15px;">C</div>
+                                    </div>
+                                    <div class="base-type-item">
+                                        <p class="base-type-subtitle">RNA:</p>
+                                        <div class="ball" style="background-color: #e8524b; margin-left: 15px;">A</div>
+                                        <div class="ball" style="background-color: #f680e7; margin-left: 15px;">U</div>
+                                        <div class="ball" style="background-color: #58b374; margin-left: 15px;">G</div>
+                                        <div class="ball" style="background-color: #6397f5; margin-left: 15px;">C</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="base-type-box">
+                                <div class="table-text-box">Composição dos ácidos nucleicos</div>
+                                <div class="base-type-item">
+                                    <p class="base-type-subtitle">Bases Purinas:</p>
+                                    <div class="ball" style="background-color: #e8524b; margin-left: 15px;">A</div>
+                                    <div class="ball" style="background-color: #58b374; margin-left: 15px;">G</div>
+                                </div>
+                                <div class="base-type-item">
+                                    <p class="base-type-subtitle">Bases Pirimidinas:</p>
+                                    <div class="ball" style="background-color: #6397f5; margin-left: 8px;">C</div>
+                                    <div class="ball" style="background-color: #ffcf4f; margin-left: 15px;">T</div>
+                                    <div class="ball" style="background-color: #f680e7; margin-left: 15px;">U</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </BASES>
+
+                <AMINOS id="AMINOS" hidden="true">
+
+                </AMINOS>
 
             </TABLES>
 
