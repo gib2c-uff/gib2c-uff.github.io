@@ -201,5 +201,111 @@ function convertToRNA()
 
 function convertToPROT()
 {
+    let textBox = document.getElementById("converter-input").value
+    let check = checkValidity(textBox)
+    let result = ''
+    if (check != 0)
+    {
+        let size = check.length
+        
+        for (let i = 0; i < size; i+=3)
+        {
+            triad = check[i] + check[i+1] + check[i+2]
+            prot = ''
+            switch(triad)
+            {
+                case "UUU": prot = 'F'; break;
+                case "UUC": prot = 'F'; break;
+                case "UUA": prot = 'L'; break;
+                case "UUG": prot = 'L'; break;
+                case "UCU": prot = 'S'; break;
+                case "UCC": prot = 's'; break;
+                case "UCA": prot = 'S'; break;
+                case "UCG": prot = 'S'; break;
+                case "UAU": prot = 'Y'; break;
+                case "UAC": prot = 'Y'; break;
+                case "UAA": prot = '*'; break;
+                case "UAG": prot = '*'; break;
+                case "UGU": prot = 'C'; break;
+                case "UGC": prot = 'C'; break;
+                case "UGA": prot = '*'; break;
+                case "UGG": prot = 'W'; break;
+                case "CUU": prot = 'L'; break;
+                case "CUC": prot = 'L'; break;
+                case "CUA": prot = 'L'; break;
+                case "CUG": prot = 'L'; break;
+                case "CCU": prot = 'P'; break;
+                case "CCC": prot = 'P'; break;
+                case "CCA": prot = 'P'; break;
+                case "CCG": prot = 'P'; break;
+                case "CAU": prot = 'H'; break;
+                case "CAC": prot = 'H'; break;
+                case "CAA": prot = 'Q'; break;
+                case "CAG": prot = 'Q'; break;
+                case "CGU": prot = 'R'; break;
+                case "CGC": prot = 'R'; break;
+                case "CGA": prot = 'R'; break;
+                case "CGG": prot = 'R'; break;
+                case "AUU": prot = 'I'; break;
+                case "AUC": prot = 'I'; break;
+                case "AUA": prot = 'I'; break;
+                case "AUG": prot = '>'; break;
+                case "ACU": prot = 'T'; break;
+                case "ACC": prot = 'T'; break;
+                case "ACA": prot = 'T'; break;
+                case "ACG": prot = 'T'; break;
+                case "AAU": prot = 'N'; break;
+                case "AAC": prot = 'N'; break;
+                case "AAA": prot = 'K'; break;
+                case "AAG": prot = 'K'; break;
+                case "AGU": prot = 'S'; break;
+                case "AGC": prot = 'S'; break;
+                case "AGA": prot = 'R'; break;
+                case "AGG": prot = 'R'; break;
+                case "GUU": prot = 'V'; break;
+                case "GUC": prot = 'V'; break;
+                case "GUA": prot = 'V'; break;
+                case "GUG": prot = 'V'; break;
+                case "GCU": prot = 'A'; break;
+                case "GCC": prot = 'A'; break;
+                case "GCA": prot = 'A'; break;
+                case "GCG": prot = 'A'; break;
+                case "GAU": prot = 'D'; break;
+                case "GAC": prot = 'D'; break;
+                case "GAA": prot = 'E'; break;
+                case "GAG": prot = 'E'; break;
+                case "GGU": prot = 'G'; break;
+                case "GGC": prot = 'G'; break;
+                case "GGA": prot = 'G'; break;
+                case "GGG": prot = 'G'; break;
+            }
+            result += prot
+        }
+        if (size == 0)
+        {
+            valid(1)
+        }
+        else
+        {
+            document.getElementById("converter-input").value = result
+            valid(2)
+            drawAcid(result, 1)
+        }
+    }
+}
 
+
+
+function showBases()
+{
+    document.getElementById("AMINOS").hidden = true
+    document.getElementById("BASES").hidden = false
+}
+
+
+
+function showAmino()
+{
+    document.getElementById("BASES").hidden = true
+    document.getElementById("AMINOS").hidden = false
 }

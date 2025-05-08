@@ -63,8 +63,8 @@
                 <BASES id="BASES">
                     <div class="table-sections">
                         <div class="conversion-buttons">
-                            <button class="converter-button" onclick="">Bases Nitrogenadas</button>
-                            <button class="converter-button" onclick="">Aminoácidos</button>
+                            <button class="converter-button" onclick="showBases()">Bases Nitrogenadas</button>
+                            <button class="converter-button" onclick="showAmino()">Aminoácidos</button>
                         </div>
 
                         <div class="base-complements">
@@ -141,6 +141,311 @@
                 </BASES>
 
                 <AMINOS id="AMINOS" hidden="true">
+                    <div class="amino-sections">
+                        <div class="amino-left-row">
+                            <div class="amino-conversion-buttons">
+                                <button class="converter-button" onclick="showBases()">Bases Nitrogenadas</button>
+                                <button class="converter-button" onclick="showAmino()">Aminoácidos</button>
+                            </div>
+                            <div class="amino-groups">
+                                <div class="table-text-box">Grupos de aminoácidos</div>
+                                <div class="amino-side-text" style="background-color: #ffcf4f;">Apolares</div>
+                                <div class="amino-side-text" style="background-color: #58b374;">Polares</div>
+                                <div class="amino-side-text" style="background-color: #e8524b;">Ácidos</div>
+                                <div class="amino-side-text" style="background-color: #6397f5;">Básicos</div>
+                            </div>
+                        </div>
+
+
+                        <div class="amino-table">
+
+
+
+                            <div class="top-label-row">
+                                <div class="top-label" style="color:#f680e7;">U</div>
+                                <div class="top-label" style="color:#6397f5;">C</div>
+                                <div class="top-label" style="color:#e8524b;">A</div>
+                                <div class="top-label" style="color:#58b374;">G</div>
+                            </div>
+
+
+
+                            <div class="amino-table-row">
+                                <div class="left-label" style="color:#f680e7;">U</div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>UUU</p>
+                                        <p>UUC</p>
+                                        <p>UUA</p>
+                                        <p>UUG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Fenilanina</div>
+                                        <div class="amino-text">Fenilanina</div>
+                                        <div class="amino-text">Leucina</div>
+                                        <div class="amino-text">Leucina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>UCU</p>
+                                        <p>UCC</p>
+                                        <p>UCA</p>
+                                        <p>UCG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>UAU</p>
+                                        <p>UAC</p>
+                                        <p>UAA</p>
+                                        <p>UAG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Tirosina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Tirosina</div>
+                                        <div class="amino-text" style="background-color: #a592de;">Parada</div>
+                                        <div class="amino-text" style="background-color: #a592de;">Parada</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>UGU</p>
+                                        <p>UGC</p>
+                                        <p>UGA</p>
+                                        <p>UGG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Cisteína</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Cisteína</div>
+                                        <div class="amino-text" style="background-color: #a592de;">Parada</div>
+                                        <div class="amino-text">Triptofano</div>
+                                    </div>
+                                </div>
+                                <div class="right-label">
+                                    <div class="right-label-letter" style="color:#f680e7;">U</div>
+                                    <div class="right-label-letter" style="color:#6397f5;">C</div>
+                                    <div class="right-label-letter" style="color:#e8524b;">A</div>
+                                    <div class="right-label-letter" style="color:#58b374;">G</div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="amino-table-row">
+                                <div class="left-label" style="color:#6397f5;">C</div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>CUU</p>
+                                        <p>CUC</p>
+                                        <p>CUA</p>
+                                        <p>CUG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Leucina</div>
+                                        <div class="amino-text">Leucina</div>
+                                        <div class="amino-text">Leucina</div>
+                                        <div class="amino-text">Leucina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>CCU</p>
+                                        <p>CCC</p>
+                                        <p>CCA</p>
+                                        <p>CCG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Prolina</div>
+                                        <div class="amino-text">Prolina</div>
+                                        <div class="amino-text">Prolina</div>
+                                        <div class="amino-text">Prolina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>CAU</p>
+                                        <p>CAC</p>
+                                        <p>CAA</p>
+                                        <p>CAG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#6397f5;">Histidina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Histidina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Glutamina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Glutamina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>CGU</p>
+                                        <p>CGC</p>
+                                        <p>CGA</p>
+                                        <p>CGG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                    </div>
+                                </div>
+                                <div class="right-label">
+                                    <div class="right-label-letter" style="color:#f680e7;">U</div>
+                                    <div class="right-label-letter" style="color:#6397f5;">C</div>
+                                    <div class="right-label-letter" style="color:#e8524b;">A</div>
+                                    <div class="right-label-letter" style="color:#58b374;">G</div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="amino-table-row">
+                                <div class="left-label" style="color:#e8524b;">A</div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>AUU</p>
+                                        <p>AUC</p>
+                                        <p>AUA</p>
+                                        <p>AUG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Isoleucina</div>
+                                        <div class="amino-text">Isoleucina</div>
+                                        <div class="amino-text">Isoleucina</div>
+                                        <div class="amino-text">Metionina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>ACU</p>
+                                        <p>ACC</p>
+                                        <p>ACA</p>
+                                        <p>ACG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Treonina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Treonina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Treonina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Treonina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>AAU</p>
+                                        <p>AAC</p>
+                                        <p>AAA</p>
+                                        <p>AAG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Asparagina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Asparagina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Lisina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Lisina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>AGU</p>
+                                        <p>AGC</p>
+                                        <p>AGA</p>
+                                        <p>AGG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                        <div class="amino-text" style="background-color:#58b374;">Serina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                        <div class="amino-text" style="background-color:#6397f5;">Arginina</div>
+                                    </div>
+                                </div>
+                                <div class="right-label">
+                                    <div class="right-label-letter" style="color:#f680e7;">U</div>
+                                    <div class="right-label-letter" style="color:#6397f5;">C</div>
+                                    <div class="right-label-letter" style="color:#e8524b;">A</div>
+                                    <div class="right-label-letter" style="color:#58b374;">G</div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="amino-table-row">
+                                <div class="left-label" style="color:#58b374;">G</div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>GUU</p>
+                                        <p>GUC</p>
+                                        <p>GUA</p>
+                                        <p>GUG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Valina</div>
+                                        <div class="amino-text">Valina</div>
+                                        <div class="amino-text">Valina</div>
+                                        <div class="amino-text">Valina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>GCU</p>
+                                        <p>GCC</p>
+                                        <p>GCA</p>
+                                        <p>GCG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Alanina</div>
+                                        <div class="amino-text">Alanina</div>
+                                        <div class="amino-text">Alanina</div>
+                                        <div class="amino-text">Alanina</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>GAU</p>
+                                        <p>GAC</p>
+                                        <p>GAA</p>
+                                        <p>GAG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text" style="background-color:#e8524b;">Ácido Aspártico</div>
+                                        <div class="amino-text" style="background-color:#e8524b;">Ácido Aspártico</div>
+                                        <div class="amino-text" style="background-color:#e8524b;">Ácido Glutâmico</div>
+                                        <div class="amino-text" style="background-color:#e8524b;">Ácido Glutâmico</div>
+                                    </div>
+                                </div>
+                                <div class="amino-table-block">
+                                    <div class="amino-letters">
+                                        <p>GGU</p>
+                                        <p>GGC</p>
+                                        <p>GGA</p>
+                                        <p>GGG</p>
+                                    </div>
+                                    <div class="amino-labels">
+                                        <div class="amino-text">Glicina</div>
+                                        <div class="amino-text">Glicina</div>
+                                        <div class="amino-text">Glicina</div>
+                                        <div class="amino-text">Glicina</div>
+                                    </div>
+                                </div>
+                                <div class="right-label">
+                                    <div class="right-label-letter" style="color:#f680e7;">U</div>
+                                    <div class="right-label-letter" style="color:#6397f5;">C</div>
+                                    <div class="right-label-letter" style="color:#e8524b;">A</div>
+                                    <div class="right-label-letter" style="color:#58b374;">G</div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                    
 
                 </AMINOS>
 

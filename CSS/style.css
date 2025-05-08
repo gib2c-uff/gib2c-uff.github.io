@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: f;
-    src: url();
+    font-family: Megapix;
+    src: url(../Assets/PressStart.ttf);
 }
 
 html {
@@ -14,7 +14,7 @@ html {
 }
 
 button {
-    font-family: PressStart;
+    font-family: Megapix;
     border-width: 16px;
     font-size: 10px;
     background: #fcf7ff;
@@ -173,8 +173,18 @@ header {
 
 
 
+
+
+
+/*----------------------------------------------*/
+/*----------------------------------------------*/
 /* TABLE */
 /*----------------------------------------------*/
+/*----------------------------------------------*/
+
+
+
+/* BASES */
 
 
 
@@ -234,6 +244,119 @@ header {
 .base-type-subtitle {
     color: #FFFFFF;
 }
+
+
+
+/* AMINOS */
+
+
+
+.amino-sections {
+    display: flex;
+    justify-content: center;
+}
+
+.amino-left-row {
+    flex-direction: column;
+
+    width: 20%
+}
+
+.amino-conversion-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin-top: 15px;
+}
+
+.amino-side-text {
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 3px solid #1d1539;
+}
+
+.amino-text {
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    padding: 3px;
+    margin: 1px;
+    border: 3px solid #1d1539;
+    background-color: #ffcf4f;
+}
+
+.amino-table {
+    width: 81%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.amino-table-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.amino-table-block {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.amino-letters {
+    color: #FFFFFF;
+    line-height: 23px;
+}
+
+.amino-labels {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-label-row {
+    display: flex;
+    margin-left: 55px;
+    margin-right: 60px;
+    justify-content: space-between;
+}
+
+.top-label {
+    color: white;
+    background-color: #1d1539;
+    width: 22.5%;
+    border-radius: 5px;
+    align-items: center;
+    line-height: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.left-label {
+    background-color: #1d1539;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.right-label {
+    background-color: #1d1539;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
 
 /*----------------------------------------------*/
 /* FOOTER */
