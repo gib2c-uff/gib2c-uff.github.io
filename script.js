@@ -24,6 +24,7 @@ function DNAMode()
 function drawAcid(inp, isRNA)
 {
     let box = document.getElementById("drawing")
+    let prots = document.getElementById("proteins")
     let item
     let width
     let line
@@ -87,6 +88,49 @@ function drawAcid(inp, isRNA)
                 box.appendChild(line)
             }
         }
+    }
+}
+
+
+
+function drawProt(inp)
+{
+    let box = document.getElementById("proteins")
+    let line
+    let color
+    while (box.hasChildNodes()){ box.removeChild(box.firstChild) }
+    for (let i = 0; i < inp.length; i++)
+        {
+
+            switch(inp[i])
+            {
+            case 'F': color = "#ffcf4f"; break;
+            case 'L': color = "#ffcf4f"; break;
+            case 'S': color = "#58b374"; break;
+            case 'Y': color = "#58b374"; break;
+            case '*': color = "#e8524b"; break;
+            case 'C': color = "#e8524b"; break;
+            case 'W': color = "#e8524b"; break;
+            case 'P': color = "#ffcf4f"; break;
+            case 'H': color = "#e8524b"; break;
+            case 'Q': color = "#e8524b"; break;
+            case 'R': color = "#e8524b"; break;
+            case 'I': color = "#ffcf4f"; break;
+            case 'N': color = "#e8524b"; break;
+            case '>': color = "#ffcf4f"; break;
+            case 'T': color = "#58b374"; break;
+            case 'K': color = "#e8524b"; break;
+            case 'V': color = "#ffcf4f"; break;
+            case 'A': color = "#e8524b"; break;
+            case 'D': color = "#e8524b"; break;
+            case 'E': color = "#e8524b"; break;
+            case 'G': color = "#e8524b"; break;
+
+            }
+
+            line = document.createElement("center")
+            line.innerHTML = "<div class=\"amino-text\" style=\"width:200px; font-size: 32px; background-color: " + color + "\">" + inp[i] + "</div>"
+            box.appendChild(line)
     }
 }
 
@@ -281,6 +325,7 @@ function convertToPROT()
             }
             result += prot
         }
+        drawProt(result)
         if (size == 0)
         {
             valid(1)

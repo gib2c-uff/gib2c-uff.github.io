@@ -55,15 +55,17 @@ header {
 /* CONTENT */
 /*----------------------------------------------*/
 
+
 .main-content {
     display: flex;
-    height: 500px;
+    height: 100%;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     margin: 1%;
+    min-height: 550px;
     background-color: #8ecae4;
 }
 
@@ -126,6 +128,7 @@ header {
     text-align: center;
     width: 100%;
     font-size: 32px;
+    height: 100%;
 }
 
 .text-input {
@@ -279,7 +282,7 @@ header {
 
 .amino-text {
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 9px;
     text-align: center;
     padding: 3px;
     margin: 1px;
@@ -364,5 +367,5 @@ header {
 
 footer {
     background-color: #1d1539;
-    height: 118px;
+    height: 150px;
 }
