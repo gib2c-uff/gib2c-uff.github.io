@@ -24,12 +24,13 @@ function DNAMode()
 function drawAcid(inp, isRNA)
 {
     let box = document.getElementById("drawing")
+    while (box.hasChildNodes()){ box.removeChild(box.firstChild) }
     let prots = document.getElementById("proteins")
+    while (prots.hasChildNodes()){ prots.removeChild(prots.firstChild) }
     let item
     let width
     let line
     let direction = "left"
-    while (box.hasChildNodes()){ box.removeChild(box.firstChild) }
 
     for (let i = 0; i < inp.length; i++)
     {
@@ -95,41 +96,43 @@ function drawAcid(inp, isRNA)
 
 function drawProt(inp)
 {
-    let box = document.getElementById("proteins")
+    let box = document.getElementById("drawing")
+    while (box.hasChildNodes()){ box.removeChild(box.firstChild) }
+    let prots = document.getElementById("proteins")
+    while (prots.hasChildNodes()){ prots.removeChild(prots.firstChild) }
     let line
     let color
-    while (box.hasChildNodes()){ box.removeChild(box.firstChild) }
     for (let i = 0; i < inp.length; i++)
         {
 
             switch(inp[i])
             {
-            case 'F': color = "#ffcf4f"; break;
-            case 'L': color = "#ffcf4f"; break;
-            case 'S': color = "#58b374"; break;
-            case 'Y': color = "#58b374"; break;
-            case '*': color = "#e8524b"; break;
-            case 'C': color = "#e8524b"; break;
-            case 'W': color = "#e8524b"; break;
-            case 'P': color = "#ffcf4f"; break;
-            case 'H': color = "#e8524b"; break;
-            case 'Q': color = "#e8524b"; break;
-            case 'R': color = "#e8524b"; break;
-            case 'I': color = "#ffcf4f"; break;
-            case 'N': color = "#e8524b"; break;
-            case '>': color = "#ffcf4f"; break;
-            case 'T': color = "#58b374"; break;
-            case 'K': color = "#e8524b"; break;
-            case 'V': color = "#ffcf4f"; break;
-            case 'A': color = "#e8524b"; break;
-            case 'D': color = "#e8524b"; break;
-            case 'E': color = "#e8524b"; break;
-            case 'G': color = "#e8524b"; break;
+            case 'Fenilalanina': color = "#ffcf4f"; break;
+            case 'Leucina': color = "#ffcf4f"; break;
+            case 'Serina': color = "#58b374"; break;
+            case 'Tirosina': color = "#58b374"; break;
+            case 'Parada': color = "#a592de"; break;
+            case 'Cisteína': color = "#58b374"; break;
+            case 'Triptofano': color = "#ffcf4f"; break;
+            case 'Prolina': color = "#ffcf4f"; break;
+            case 'Histidina': color = "#6397f5"; break;
+            case 'Glutamina': color = "#58b374"; break;
+            case 'Arginina': color = "#6397f5"; break;
+            case 'Isoleucina': color = "#ffcf4f"; break;
+            case 'Asparagina': color = "#58b374"; break;
+            case 'Metionina': color = "#ffcf4f"; break;
+            case 'Treonina': color = "#58b374"; break;
+            case 'Lisina': color = "#6397f5"; break;
+            case 'Valina': color = "#ffcf4f"; break;
+            case 'Alanina': color = "#ffcf4f"; break;
+            case 'Ácido Aspártico': color = "#e8524b"; break;
+            case 'Ácido Glutâmico': color = "#e8524b"; break;
+            case 'Glicina': color = "#ffcf4f"; break;
 
             }
 
             line = document.createElement("center")
-            line.innerHTML = "<div class=\"amino-text\" style=\"width:200px; font-size: 32px; background-color: " + color + "\">" + inp[i] + "</div>"
+            line.innerHTML = "<div class=\"amino-text\" style=\"width:300px; font-size: 32px; background-color: " + color + "\">" + inp[i] + "</div>"
             box.appendChild(line)
     }
 }
@@ -247,95 +250,96 @@ function convertToPROT()
 {
     let textBox = document.getElementById("converter-input").value
     let check = checkValidity(textBox)
-    let result = ''
-    if (check != 0)
+    let result = []
+    let convertable = 1
+
+    for (let i = 0; i < check.length; i++)
     {
-        let size = check.length
-        
-        for (let i = 0; i < size; i+=3)
+        if (check[i] == 'T') convertable = 0
+    }
+
+    if (check != 0 && convertable == 1)
+    {
+        for (let i = 0; i < check.length; i+=3)
         {
             triad = check[i] + check[i+1] + check[i+2]
             prot = ''
             switch(triad)
             {
-                case "UUU": prot = 'F'; break;
-                case "UUC": prot = 'F'; break;
-                case "UUA": prot = 'L'; break;
-                case "UUG": prot = 'L'; break;
-                case "UCU": prot = 'S'; break;
-                case "UCC": prot = 's'; break;
-                case "UCA": prot = 'S'; break;
-                case "UCG": prot = 'S'; break;
-                case "UAU": prot = 'Y'; break;
-                case "UAC": prot = 'Y'; break;
-                case "UAA": prot = '*'; break;
-                case "UAG": prot = '*'; break;
-                case "UGU": prot = 'C'; break;
-                case "UGC": prot = 'C'; break;
-                case "UGA": prot = '*'; break;
-                case "UGG": prot = 'W'; break;
-                case "CUU": prot = 'L'; break;
-                case "CUC": prot = 'L'; break;
-                case "CUA": prot = 'L'; break;
-                case "CUG": prot = 'L'; break;
-                case "CCU": prot = 'P'; break;
-                case "CCC": prot = 'P'; break;
-                case "CCA": prot = 'P'; break;
-                case "CCG": prot = 'P'; break;
-                case "CAU": prot = 'H'; break;
-                case "CAC": prot = 'H'; break;
-                case "CAA": prot = 'Q'; break;
-                case "CAG": prot = 'Q'; break;
-                case "CGU": prot = 'R'; break;
-                case "CGC": prot = 'R'; break;
-                case "CGA": prot = 'R'; break;
-                case "CGG": prot = 'R'; break;
-                case "AUU": prot = 'I'; break;
-                case "AUC": prot = 'I'; break;
-                case "AUA": prot = 'I'; break;
-                case "AUG": prot = '>'; break;
-                case "ACU": prot = 'T'; break;
-                case "ACC": prot = 'T'; break;
-                case "ACA": prot = 'T'; break;
-                case "ACG": prot = 'T'; break;
-                case "AAU": prot = 'N'; break;
-                case "AAC": prot = 'N'; break;
-                case "AAA": prot = 'K'; break;
-                case "AAG": prot = 'K'; break;
-                case "AGU": prot = 'S'; break;
-                case "AGC": prot = 'S'; break;
-                case "AGA": prot = 'R'; break;
-                case "AGG": prot = 'R'; break;
-                case "GUU": prot = 'V'; break;
-                case "GUC": prot = 'V'; break;
-                case "GUA": prot = 'V'; break;
-                case "GUG": prot = 'V'; break;
-                case "GCU": prot = 'A'; break;
-                case "GCC": prot = 'A'; break;
-                case "GCA": prot = 'A'; break;
-                case "GCG": prot = 'A'; break;
-                case "GAU": prot = 'D'; break;
-                case "GAC": prot = 'D'; break;
-                case "GAA": prot = 'E'; break;
-                case "GAG": prot = 'E'; break;
-                case "GGU": prot = 'G'; break;
-                case "GGC": prot = 'G'; break;
-                case "GGA": prot = 'G'; break;
-                case "GGG": prot = 'G'; break;
+                case "UUU": prot = 'Fenilalanina'; break;
+                case "UUC": prot = 'Fenilalanina'; break;
+                case "UUA": prot = 'Leucina'; break;
+                case "UUG": prot = 'Leucina'; break;
+                case "UCU": prot = 'Serina'; break;
+                case "UCC": prot = 'Serina'; break;
+                case "UCA": prot = 'Serina'; break;
+                case "UCG": prot = 'Serina'; break;
+                case "UAU": prot = 'Tirosina'; break;
+                case "UAC": prot = 'Tirosina'; break;
+                case "UAA": prot = 'Parada'; break;
+                case "UAG": prot = 'Parada'; break;
+                case "UGU": prot = 'Cisteína'; break;
+                case "UGC": prot = 'Cisteína'; break;
+                case "UGA": prot = 'Parada'; break;
+                case "UGG": prot = 'Triptofano'; break;
+                case "CUU": prot = 'Leucina'; break;
+                case "CUC": prot = 'Leucina'; break;
+                case "CUA": prot = 'Leucina'; break;
+                case "CUG": prot = 'Leucina'; break;
+                case "CCU": prot = 'Prolina'; break;
+                case "CCC": prot = 'Prolina'; break;
+                case "CCA": prot = 'Prolina'; break;
+                case "CCG": prot = 'Prolina'; break;
+                case "CAU": prot = 'Histidina'; break;
+                case "CAC": prot = 'Histidina'; break;
+                case "CAA": prot = 'Glutamina'; break;
+                case "CAG": prot = 'Glutamina'; break;
+                case "CGU": prot = 'Arginina'; break;
+                case "CGC": prot = 'Arginina'; break;
+                case "CGA": prot = 'Arginina'; break;
+                case "CGG": prot = 'Arginina'; break;
+                case "AUU": prot = 'Isoleucina'; break;
+                case "AUC": prot = 'Isoleucina'; break;
+                case "AUA": prot = 'Isoleucina'; break;
+                case "AUG": prot = 'Metionina'; break;
+                case "ACU": prot = 'Treonina'; break;
+                case "ACC": prot = 'Treonina'; break;
+                case "ACA": prot = 'Treonina'; break;
+                case "ACG": prot = 'Treonina'; break;
+                case "AAU": prot = 'Asparagina'; break;
+                case "AAC": prot = 'Asparagina'; break;
+                case "AAA": prot = 'Lisina'; break;
+                case "AAG": prot = 'Lisina'; break;
+                case "AGU": prot = 'Serina'; break;
+                case "AGC": prot = 'Serina'; break;
+                case "AGA": prot = 'Arginina'; break;
+                case "AGG": prot = 'Arginina'; break;
+                case "GUU": prot = 'Valina'; break;
+                case "GUC": prot = 'Valina'; break;
+                case "GUA": prot = 'Valina'; break;
+                case "GUG": prot = 'Valina'; break;
+                case "GCU": prot = 'Alanina'; break;
+                case "GCC": prot = 'Alanina'; break;
+                case "GCA": prot = 'Alanina'; break;
+                case "GCG": prot = 'Alanina'; break;
+                case "GAU": prot = 'Ácido Aspártico'; break;
+                case "GAC": prot = 'Ácido Aspártico'; break;
+                case "GAA": prot = 'Ácido Glutâmico'; break;
+                case "GAG": prot = 'Ácido Glutâmico'; break;
+                case "GGU": prot = 'Glicina'; break;
+                case "GGC": prot = 'Glicina'; break;
+                case "GGA": prot = 'Glicina'; break;
+                case "GGG": prot = 'Glicina'; break;
             }
-            result += prot
+            result.push(prot)
         }
         drawProt(result)
-        if (size == 0)
-        {
-            valid(1)
-        }
-        else
-        {
-            document.getElementById("converter-input").value = result
-            valid(2)
-            drawAcid(result, 1)
-        }
+        valid(2)
+    }
+    else
+    {
+        if (convertable == 0) valid(1)
+        else if (check == 0) valid(0)
     }
 }
 
