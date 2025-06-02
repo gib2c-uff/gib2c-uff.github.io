@@ -132,7 +132,7 @@ function drawProt(inp)
             }
 
             line = document.createElement("center")
-            line.innerHTML = "<div class=\"amino-text\" style=\"width:300px; font-size: 32px; background-color: " + color + "\">" + inp[i] + "</div>"
+            line.innerHTML = "<div class=\"amino-text\" style=\"width:400px; font-size: 32px; background-color: " + color + "\">" + inp[i] + "</div>"
             box.appendChild(line)
     }
 }
